@@ -3,3 +3,6 @@ Este projeto é baseado na Pokedex do desenho Pokemon. O projeto foi criado pelo
 
 ## Tecnologias
 Projeto desenvolvido em HTML, CSS e Javascript.
+
+### Obs:
+#### Foi acrescentado o tipo *ghost* neste repositório.
