@@ -6,9 +6,9 @@
 
 Este projeto é baseado na Pokedex do desenho Pokemon. O projeto foi criado pelo Emerson Broga em Janeiro de 2021.
 
-Para acessar o projeto, basta [clicar aqui](https://danieldpalma.github.io/portfolio/).
+Para acessar o projeto, basta [clicar aqui](https://danieldpalma.github.io/pokedex-js/).
 
-Caso não esteja funcionado, pode também acessar [clicando aqui](https://danieldpalma.github.io/portfolio/).
+Caso não esteja funcionado, pode também acessar [clicando aqui](https://pokedex-js-omega.vercel.app/).
 
 ## Tecnologias
 
