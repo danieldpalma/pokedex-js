@@ -1,19 +1,19 @@
 const types = [
-  "fire",
-  "grass",
-  "electric",
-  "water",
-  "ground",
-  "rock",
-  "fairy",
-  "ghost",
-  "poison",
-  "bug",
-  "dragon",
-  "psychic",
-  "flying",
-  "fighting",
-  "normal",
+  'fire',
+  'grass',
+  'electric',
+  'water',
+  'ground',
+  'rock',
+  'fairy',
+  'ghost',
+  'poison',
+  'bug',
+  'dragon',
+  'psychic',
+  'flying',
+  'fighting',
+  'normal',
 ];
 
 const POKEMON_COUNT = 151;
@@ -25,7 +25,7 @@ const cardHTML = `
     <small>#{id}</small>
   </div>
   <div class="img bg-{type}">
-    <img src="https://cdn.traction.one/pokedex/pokemon/{id}.png" alt="{name}" />
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png" alt="{name}" />
   </div>
   <div class="type {type}">
     <p>{type}</p>
@@ -46,7 +46,7 @@ const getType = (data) => {
 };
 
 const fetchPokemon = async (number) => {
-  if(number === undefined) return ;
+  if (number === undefined) return;
   const url = `https://pokeapi.co/api/v2/pokemon/${number}`;
   const response = await fetch(url).then((response) => response.json());
   const { id, name, types } = response;
@@ -58,23 +58,22 @@ const fetchPokemon = async (number) => {
 const replacer = (text, source, destination) => {
   const regex = new RegExp(source, 'gi');
   return text.replace(regex, destination);
-}
+};
 
 const createPokemonCard = (pokemon) => {
-  const {id, name, type} = pokemon;
-  let newCard = replacer(cardHTML, '\{id\}', id);
-  newCard = replacer(newCard, '\{name\}', name);
-  newCard = replacer(newCard, '\{type\}', type);
+  const { id, name, type } = pokemon;
+  let newCard = replacer(cardHTML, '{id}', id);
+  newCard = replacer(newCard, '{name}', name);
+  newCard = replacer(newCard, '{type}', type);
 
-  cards.innerHTML+= newCard;
+  cards.innerHTML += newCard;
 };
 
 const fetchPokemons = async () => {
   for (let i = 1; i <= POKEMON_COUNT; i++) {
     const pokemon = await fetchPokemon(i);
-    createPokemonCard(pokemon)
-    console.log(pokemon)
-  };
+    createPokemonCard(pokemon);
+  }
 };
 
 fetchPokemons();
